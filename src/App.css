@@ -18,9 +18,78 @@ main {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 130vh;
   width: 100%;
   border: 2px solid white;
   position: relative;
   z-index: 2;
+  color: white;
+}
+
+section nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top: 70px;
+}
+
+section nav .navelem {
+  width: 120px;
+}
+
+section nav a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+section nav a svg{
+  color: red;
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+section nav a svg:hover{
+  color: red;
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#section-1 .middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#section-1 .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 50px;
+}
+
+#section-1 .left h1 {
+  font-size: 7vw;
+  line-height: 0.9;
+  margin: 0;
+}
+#section-1 .left,.right{
+  flex-grow: 1;
+}
+#section-1 .right ul{
+  list-style: none;
+  display: flex;
+}
+#section-1 .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 60px;
 }

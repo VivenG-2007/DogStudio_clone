@@ -72,17 +72,22 @@ export default function Dog() {
   tl
     .to(model1.current.position, {
       z: -3,
-      x: -0.5,
+      x: 0,
+      duration:1.3,
     }, "phase1")
 
     .to(model1.current.rotation, {
-      x: 0.05 * Math.PI,
-      y: -0.9 * Math.PI,
-    }, "phase1")
+      x: 0.1 * Math.PI,
+      y: -0.8 * Math.PI,
+    }, "phase3")
 
     .to(model1.current.position, {
-      z: 0.01,
+      z: -1,
+      x:-1.2,
     }, "phase2")
+    .to(model1.current.rotation,{
+      y:-0.9*Math.PI
+    },"phase2")
 
 }, [])
 
