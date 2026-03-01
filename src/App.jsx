@@ -8,9 +8,24 @@ function App() {
 
   return (
     <>
-    <Canvas>
-      <Dog />
+      <main>
+        <Canvas style={{
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          backgroundImage:"url(/background-xl.png)",
+          backgroundRepeat:'no-repeat',
+          backgroundSize:'cover'
+        }}>
+        <Dog />
       </Canvas>
+    </main >
+        <section></section>
+        <section></section>
+        <section></section>
+      
     </>
   )
 }
