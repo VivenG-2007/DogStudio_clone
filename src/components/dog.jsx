@@ -73,12 +73,13 @@ export default function Dog() {
     .to(model1.current.position, {
       z: -3,
       x: 0,
-      duration:1.3,
+      duration:4,
     }, "phase1")
 
     .to(model1.current.rotation, {
       x: 0.1 * Math.PI,
       y: -0.8 * Math.PI,
+      duration:1.4,
     }, "phase3")
 
     .to(model1.current.position, {

@@ -9,87 +9,199 @@ body,
 #root {
   width: 100%;
   background-color: black;
+  color: whitesmoke;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
   position: relative;
-  z-index: 1;
-
 }
 
 section {
-  min-height: 130vh;
-  width: 100%;
-  border: 2px solid white;
+  min-height: 100vh;
   position: relative;
   z-index: 2;
-  color: white;
 }
 
-section nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  padding-top: 70px;
+#canvas-elem::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/background-xl.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
 }
 
-section nav .navelem {
-  width: 120px;
+#section-1 {
+
+  --gap: 5rem;
+
+  position: relative;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    padding-top: 3.5rem;
+
+    .nav-elem:nth-child(2) {
+      i {
+        color: red;
+      }
+    }
+
+    svg {
+      max-width: 5rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .middle {
+    display: flex;
+    gap: var(--gap);
+
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-block: 7rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 0.8;
+      text-align: right;
+    }
+
+  }
+
+  .bottom {
+
+    display: flex;
+    gap: var(--gap);
+
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .right {
+      p {
+        font-weight: 200;
+        line-height: 1.5;
+      }
+    }
+
+  }
+
+  .first-line {
+    width: 35rem;
+    background-color: rgba(255, 0, 0, 0.396);
+    height: 1px;
+    position: absolute;
+    transform: rotate(45deg) translate(0, -17rem);
+  }
+
+  .second-line {
+    width: 10rem;
+    background-color: rgba(255, 0, 0, 0.396);
+    height: 1px;
+    position: absolute;
+    transform: rotate(135deg);
+    top: 28%;
+    right: 12%;
+  }
 }
 
-section nav a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-section nav a svg{
-  color: red;
-  font-size: 30px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-section nav a svg:hover{
-  color: red;
-  font-size: 30px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-#section-1 .middle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#section-2 {
+  .titles {
+    display: flex;
+    flex-direction: column;
+    padding: 7rem;
+    padding-left: 10rem;
+  }
+
+  .title {
+    display: flex;
+    gap: 4rem;
+    font-size: 2rem;
+    margin: 1rem;
+    width: 55vw;
+    opacity: 0.3;
+  }
+
+  .title small {
+    margin-top: 15px;
+    font-size: 0.5rem;
+    width: 70px;
+  }
+
+  .title h1 {
+    font-weight: 50;
+  }
+
+  .title:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 }
 
-#section-1 .left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-right: 50px;
+.images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-#section-1 .left h1 {
-  font-size: 7vw;
-  line-height: 0.9;
-  margin: 0;
+.images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-#section-1 .left,.right{
-  flex-grow: 1;
+
+main:has(#section-2 .title[img-id='tomorrowland']:hover) .images #tomorrowland {
+  opacity: 1;
 }
-#section-1 .right ul{
-  list-style: none;
-  display: flex;
+
+main:has(#section-2 .title[img-id='navy-pier']:hover) .images #navy-pier {
+  opacity: 1;
 }
-#section-1 .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-right: 60px;
+
+main:has(#section-2 .title[img-id='msi-chicago']:hover) .images #msi-chicago {
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-id='this-was-phone']:hover) .images #this-was-phone {
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-id='kikk-festival']:hover) .images #kikk-festival {
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-id='kennedy-center']:hover) .images #kennedy-center {
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
+  opacity: 1;
 }
