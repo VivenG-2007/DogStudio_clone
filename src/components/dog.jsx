@@ -121,8 +121,6 @@ export default function Dog() {
   const model1 = useRef()
 
   useGSAP(() => {
-
-    // Phase 1: While scrolling through section-1 into section-2 — move the dog
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: "#section-1",
@@ -141,7 +139,7 @@ export default function Dog() {
       .to(model.scene.rotation, {
         x: `+=${Math.PI / 15}`
       })
-          const tl2 = gsap.timeline({
+    const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: "#section-2",
         endTrigger: "#section-3",
@@ -153,7 +151,7 @@ export default function Dog() {
 
     tl2
       .to(model.scene.rotation, {
-        y: `-=${Math.PI}`,        // 180° rotation
+        y: `-=${Math.PI}`,
         duration: 2,
       }, "rotate")
       .to(model.scene.position, {
@@ -163,14 +161,13 @@ export default function Dog() {
         duration: 2,
       }, "rotate")
       .to(material.current.uProgress, {
-        value: 1.0,               // dog turns gold as it rotates into section-3
+        value: 1.0,
         duration: 2,
       }, "rotate")
 
   }, [])
 
   useEffect(() => {
-    // FIX: query by img-title attribute which matches App.jsx markup
     const addHover = (selector, matcap) => {
       const el = document.querySelector(selector)
       if (!el) return
