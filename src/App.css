@@ -158,50 +158,60 @@ section {
   }
 }
 
+main:has(#section-2 .title:hover) #canvas-elem::after {
+  opacity: 0;
+}
+
 .images {
   position: fixed;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
 
-.images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
 
+}
 main:has(#section-2 .title[img-id='tomorrowland']:hover) .images #tomorrowland {
   opacity: 1;
+  background-color: rgb(1, 1, 45);
 }
 
 main:has(#section-2 .title[img-id='navy-pier']:hover) .images #navy-pier {
   opacity: 1;
+  background-color: rgb(1, 1, 45);
 }
 
 main:has(#section-2 .title[img-id='msi-chicago']:hover) .images #msi-chicago {
   opacity: 1;
+  background-color: rgb(0, 0, 60);
 }
 
 main:has(#section-2 .title[img-id='this-was-phone']:hover) .images #this-was-phone {
   opacity: 1;
+  background-color: rgb(0, 0, 60);
 }
 
 main:has(#section-2 .title[img-id='kikk-festival']:hover) .images #kikk-festival {
   opacity: 1;
+  background-color: rgb(0, 0, 126);
 }
 
 main:has(#section-2 .title[img-id='kennedy-center']:hover) .images #kennedy-center {
   opacity: 1;
+  background-color: rgb(1, 91, 82);
 }
 
 main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
   opacity: 1;
+  background-color: rgb(150, 28, 28);
 }

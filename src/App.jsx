@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
+import * as THREE from 'three'
 import './App.css'
 import Dog from './components/dog.jsx'
 import { Canvas } from '@react-three/fiber'
@@ -24,6 +25,16 @@ function App() {
         </div>
         <Canvas
           id='canvas-elem'
+          gl={{
+            toneMapping: THREE.ReinhardToneMapping,
+            outputColorSpace: THREE.SRGBColorSpace,
+            alpha: true,
+            antialias: true,
+          }}
+          camera={{
+            position: [-0.5, 0, 2.5],
+            fov: 75,
+          }}
           style={{
             height: "100vh",
             width: "100vw",
@@ -32,8 +43,11 @@ function App() {
             left: 0,
             zIndex: 1,
           }} >
-          <Dog />
+          <Suspense fallback={null}>
+            <Dog />
+          </Suspense>
         </Canvas>
+
         <section id='section-1' >
           <nav>
             <div className="nav-elem">
