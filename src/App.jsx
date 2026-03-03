@@ -99,37 +99,100 @@ function App() {
         </section>
         <section id="section-2">
           <div className="titles">
-            <div img-id='tomorrowland' className="title">
+            <div img-id='tomorrowland' img-title='tomorrowland' className="title">
               <small>2020 - ONGOING</small>
               <h1>Tomorrowland</h1>
             </div>
-            <div img-id='navy-pier' className="title">
+            <div img-id='navy-pier' img-title='navy-pier' className="title">
               <small>2018 - Today</small>
               <h1>Navy Pier</h1>
             </div>
-            <div img-id='msi-chicago' className="title">
+            <div img-id='msi-chicago' img-title='msi-chicago' className="title">
               <small>2015 - Today</small>
               <h1>MSI Chicago</h1>
             </div>
-            <div img-id='this-was-phone' className="title">
+            <div img-id='this-was-phone' img-title='phone' className="title">
               <small>2016</small>
-              <h1>This Was Louise’s Phone</h1>
+              <h1>This Was Louise's Phone</h1>
             </div>
-            <div img-id='kikk-festival' className="title">
+            <div img-id='kikk-festival' img-title='kikk' className="title">
               <small>2012 - Today</small>
               <h1>KIKK Festival 2018</h1>
             </div>
-            <div img-id='kennedy-center' className="title">
+            <div img-id='kennedy-center' img-title='kennedy' className="title">
               <small>2017</small>
               <h1>The Kennedy Center</h1>
             </div>
-            <div img-id='royal-opera' className="title">
+            <div img-id='royal-opera' img-title='opera' className="title">
               <small>2016 - Ongoing</small>
               <h1>Royal Opera Of Wallonia</h1>
             </div>
           </div>
         </section>
-        <section></section>
+        <section id="section-3">
+          <div className="s3-inner">
+            <div className="s3-left">
+              <small className="s3-label">THIS IS HOW WE DO IT</small>
+              <h2 className="s3-heading">
+                We're crafting<br />
+                emotional<br />
+                experiences aimed<br />
+                at improving<br />
+                results
+              </h2>
+            </div>
+            <div className="s3-right">
+              <div className="s3-cols">
+                <p>
+                  Dogstudio is a design &amp; technology firm working globally
+                  from our offices based in Belgium and Chicago. Our strong
+                  focus on producing high quality &amp; emotional brandings,
+                  digital products and experiences became a signature.
+                </p>
+                <p>
+                  We're passionate about moving people and solving problems for
+                  the likes of Microsoft, The Museum of Science And Industry Of
+                  Chicago, The Kennedy Center of Washington, Dragone, Quanta
+                  Magazine, and many more.
+                </p>
+              </div>
+              <a className="s3-link" href="#">Discover our values</a>
+            </div>
+          </div>
+
+          <div className="s3-wmgs">
+            We<br />Make<br />Good<br />Shit
+          </div>
+
+          <footer className="s3-footer">
+            <div className="footer-cities">
+              <span>Chicago</span>
+              <span>Amsterdam</span>
+              <span>Paris</span>
+            </div>
+            <div className="footer-socials">
+              <a href="#">Fb</a>
+              <span>/</span>
+              <a href="#">Ins</a>
+              <span>/</span>
+              <a href="#">Dri</a>
+              <span>/</span>
+              <a href="#">Tw</a>
+            </div>
+          </footer>
+
+          <div className="footer-bottom">
+            <div className="footer-contact">
+              <span>We'd love to hear from you</span>
+              <span className="footer-line"></span>
+              <a href="mailto:biz@dogstudio.be">biz@dogstudio.be</a>
+            </div>
+            <div className="footer-right">
+              <a href="#">Privacy Policy</a>
+              <span>Language: 🇬🇧 English ▾</span>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   )

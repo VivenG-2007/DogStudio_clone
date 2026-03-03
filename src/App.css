@@ -8,9 +8,15 @@ html,
 body,
 #root {
   width: 100%;
-  background-color: black;
-  color: whitesmoke;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #0b0b0b;
+  color: #f5f5f7;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: whitesmoke;
+  color: black;
 }
 
 main {
@@ -47,17 +53,32 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2.5rem;
-    padding-top: 3.5rem;
+    padding: 2.5rem 4rem;
+    position: relative;
+    z-index: 100;
+
+    .nav-elem {
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
 
     .nav-elem:nth-child(2) {
       i {
-        color: red;
+        color: #ff3e3e;
+        margin-right: 5px;
       }
     }
 
     svg {
-      max-width: 5rem;
+      max-width: 6rem;
       width: 100%;
       height: 100%;
     }
@@ -80,9 +101,12 @@ section {
     }
 
     h1 {
-      font-size: 5rem;
-      line-height: 0.8;
+      font-size: 7rem;
+      font-weight: 800;
+      line-height: 0.9;
       text-align: right;
+      letter-spacing: -2px;
+      text-transform: uppercase;
     }
 
   }
@@ -181,6 +205,7 @@ main:has(#section-2 .title:hover) #canvas-elem::after {
   }
 
 }
+
 main:has(#section-2 .title[img-id='tomorrowland']:hover) .images #tomorrowland {
   opacity: 1;
   background-color: rgb(1, 1, 45);
@@ -214,4 +239,174 @@ main:has(#section-2 .title[img-id='kennedy-center']:hover) .images #kennedy-cent
 main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
   opacity: 1;
   background-color: rgb(150, 28, 28);
+}
+
+/* ─── Section 3 ─────────────────────────────────────────────── */
+#section-3 {
+  position: relative;
+  padding: 8rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .s3-inner {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .s3-left {
+    flex: 1.2;
+  }
+
+  .s3-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .s3-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .s3-right {
+    flex: 1;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .s3-cols {
+    display: flex;
+    gap: 2rem;
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      font-weight: 300;
+      opacity: 0.8;
+      flex: 1;
+    }
+  }
+
+  .s3-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #ff3e3e;
+    width: fit-content;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .s3-wmgs {
+    position: absolute;
+    right: 4rem;
+    bottom: 14rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: right;
+    line-height: 1.1;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+}
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+.s3-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 6rem;
+
+  .footer-cities {
+    display: flex;
+    gap: 4rem;
+
+    span {
+      font-size: 2rem;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+
+    a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0 3rem;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .footer-line {
+      display: inline-block;
+      width: 3rem;
+      height: 1px;
+      background: currentColor;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
