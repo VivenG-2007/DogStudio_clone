@@ -1,3 +1,14 @@
+/* ============================================================
+   MOBILE-FIRST — DogStudio
+   Base styles target mobile (< 640 px).
+   Breakpoints scale up:
+     sm  ≥ 640 px
+     md  ≥ 768 px
+     lg  ≥ 1024 px
+     xl  ≥ 1280 px
+   ============================================================ */
+
+/* ── Reset ─────────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +40,7 @@ section {
   z-index: 2;
 }
 
+/* ── Background canvas overlay ──────────────────────────────── */
 #canvas-elem::after {
   content: "";
   height: 100%;
@@ -43,370 +55,752 @@ section {
   transition: all 0.3s linear;
 }
 
+/* ============================================================
+   SECTION 1
+   ============================================================ */
 #section-1 {
-
-  --gap: 5rem;
-
+  --gap: 1.5rem;
   position: relative;
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2.5rem 4rem;
-    position: relative;
-    z-index: 100;
-
-    .nav-elem {
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-
-    .nav-elem:nth-child(2) {
-      i {
-        color: #ff3e3e;
-        margin-right: 5px;
-      }
-    }
-
-    svg {
-      max-width: 6rem;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .middle {
-    display: flex;
-    gap: var(--gap);
-
-    .left,
-    .right {
-      width: 50%;
-    }
-
-    .left {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-block: 7rem;
-    }
-
-    h1 {
-      font-size: 7rem;
-      font-weight: 800;
-      line-height: 0.9;
-      text-align: right;
-      letter-spacing: -2px;
-      text-transform: uppercase;
-    }
-
-  }
-
-  .bottom {
-
-    display: flex;
-    gap: var(--gap);
-
-    .left,
-    .right {
-      width: 50%;
-    }
-
-    .right {
-      p {
-        font-weight: 200;
-        line-height: 1.5;
-      }
-    }
-
-  }
-
-  .first-line {
-    width: 35rem;
-    background-color: rgba(255, 0, 0, 0.396);
-    height: 1px;
-    position: absolute;
-    transform: rotate(45deg) translate(0, -17rem);
-  }
-
-  .second-line {
-    width: 10rem;
-    background-color: rgba(255, 0, 0, 0.396);
-    height: 1px;
-    position: absolute;
-    transform: rotate(135deg);
-    top: 28%;
-    right: 12%;
-  }
 }
 
-#section-2 {
-  .titles {
-    display: flex;
-    flex-direction: column;
-    padding: 7rem;
-    padding-left: 10rem;
-  }
-
-  .title {
-    display: flex;
-    gap: 4rem;
-    font-size: 2rem;
-    margin: 1rem;
-    width: 55vw;
-    opacity: 0.3;
-  }
-
-  .title small {
-    margin-top: 15px;
-    font-size: 0.5rem;
-    width: 70px;
-  }
-
-  .title h1 {
-    font-weight: 50;
-  }
-
-  .title:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
+/* ── Nav ────────────────────────────────────────────────────── */
+#section-1 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.25rem;
+  /* mobile: compact */
+  position: relative;
+  z-index: 100;
 }
 
-main:has(#section-2 .title:hover) #canvas-elem::after {
-  opacity: 0;
+#section-1 nav .nav-elem {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
+#section-1 nav .nav-elem:hover {
+  opacity: 0.7;
+}
+
+/* hide "Our Show reel" text on mobile to avoid crowding */
+#section-1 nav .nav-elem:nth-child(2) {
+  display: none;
+}
+
+#section-1 nav .nav-elem:nth-child(2) i {
+  color: #ff3e3e;
+  margin-right: 5px;
+}
+
+#section-1 nav svg {
+  max-width: 4rem;
+  /* smaller logo on mobile */
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Middle (hero heading) ──────────────────────────────────── */
+#section-1 .middle {
+  display: flex;
+  flex-direction: column;
+  /* stack on mobile */
+  gap: var(--gap);
+  padding: 0 1.25rem;
+}
+
+#section-1 .middle .left,
+#section-1 .middle .right {
+  width: 100%;
+}
+
+#section-1 .middle .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* centred on mobile */
+  padding-block: 2.5rem;
+}
+
+#section-1 h1 {
+  font-size: 3.5rem;
+  /* mobile hero size */
+  font-weight: 800;
+  line-height: 0.9;
+  text-align: center;
+  /* centred on mobile */
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+/* ── Bottom description ─────────────────────────────────────── */
+#section-1 .bottom {
+  display: flex;
+  flex-direction: column;
+  /* stack on mobile */
+  gap: var(--gap);
+  padding: 0 1.25rem 2rem;
+}
+
+#section-1 .bottom .left,
+#section-1 .bottom .right {
+  width: 100%;
+}
+
+#section-1 .bottom .right p {
+  font-weight: 200;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  text-align: center;
+  /* centred on mobile */
+}
+
+/* ── Decorative lines ───────────────────────────────────────── */
+#section-1 .first-line {
+  width: 18rem;
+  background-color: rgba(255, 0, 0, 0.396);
+  height: 1px;
+  position: absolute;
+  transform: rotate(45deg) translate(0, -8rem);
+}
+
+#section-1 .second-line {
+  width: 6rem;
+  background-color: rgba(255, 0, 0, 0.396);
+  height: 1px;
+  position: absolute;
+  transform: rotate(135deg);
+  top: 28%;
+  right: 8%;
+}
+
+/* ============================================================
+   SECTION 2
+   ============================================================ */
+#section-2 .titles {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1.25rem;
+  /* mobile: minimal padding */
+}
+
+#section-2 .title {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  /* smaller on mobile */
+  margin: 0.6rem 0;
+  width: 100%;
+  /* full width on mobile */
+  opacity: 0.35;
+}
+
+#section-2 .title small {
+  margin-top: 8px;
+  font-size: 0.45rem;
+  width: 55px;
+  flex-shrink: 0;
+}
+
+#section-2 .title h1 {
+  font-weight: 50;
+}
+
+#section-2 .title:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* ── Background images on hover ─────────────────────────────── */
 .images {
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+}
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: all 0.3s linear;
-  }
+.images img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
 
+main:has(#section-2 .title:hover) #canvas-elem::after {
+  opacity: 0;
 }
 
 main:has(#section-2 .title[img-id='tomorrowland']:hover) .images #tomorrowland {
   opacity: 1;
-  background-color: rgb(1, 1, 45);
 }
 
 main:has(#section-2 .title[img-id='navy-pier']:hover) .images #navy-pier {
   opacity: 1;
-  background-color: rgb(1, 1, 45);
 }
 
 main:has(#section-2 .title[img-id='msi-chicago']:hover) .images #msi-chicago {
   opacity: 1;
-  background-color: rgb(0, 0, 60);
 }
 
 main:has(#section-2 .title[img-id='this-was-phone']:hover) .images #this-was-phone {
   opacity: 1;
-  background-color: rgb(0, 0, 60);
 }
 
 main:has(#section-2 .title[img-id='kikk-festival']:hover) .images #kikk-festival {
   opacity: 1;
-  background-color: rgb(0, 0, 126);
 }
 
 main:has(#section-2 .title[img-id='kennedy-center']:hover) .images #kennedy-center {
   opacity: 1;
-  background-color: rgb(1, 91, 82);
 }
 
 main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
   opacity: 1;
-  background-color: rgb(150, 28, 28);
 }
 
-/* ─── Section 3 ─────────────────────────────────────────────── */
+/* ============================================================
+   SECTION 3
+   ============================================================ */
 #section-3 {
   position: relative;
-  padding: 8rem 4rem 4rem;
+  padding: 3rem 1.25rem 3rem;
+  /* mobile: tight */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  .s3-inner {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-  }
-
-  .s3-left {
-    flex: 1.2;
-  }
-
-  .s3-label {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.5;
-    display: block;
-    margin-bottom: 2rem;
-  }
-
-  .s3-heading {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1px;
-  }
-
-  .s3-right {
-    flex: 1;
-    padding-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .s3-cols {
-    display: flex;
-    gap: 2rem;
-
-    p {
-      font-size: 0.85rem;
-      line-height: 1.8;
-      font-weight: 300;
-      opacity: 0.8;
-      flex: 1;
-    }
-  }
-
-  .s3-link {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: white;
-    padding-bottom: 6px;
-    border-bottom: 2px solid #ff3e3e;
-    width: fit-content;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-
-  .s3-wmgs {
-    position: absolute;
-    right: 4rem;
-    bottom: 14rem;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-align: right;
-    line-height: 1.1;
-    text-transform: uppercase;
-    opacity: 0.6;
-  }
 }
 
-/* ─── Footer ─────────────────────────────────────────────────── */
+#section-3 .s3-inner {
+  display: flex;
+  flex-direction: column;
+  /* stack on mobile */
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#section-3 .s3-left {
+  flex: unset;
+  width: 100%;
+}
+
+#section-3 .s3-label {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+#section-3 .s3-heading {
+  font-size: 2.2rem;
+  /* mobile heading */
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+#section-3 .s3-right {
+  flex: unset;
+  width: 100%;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#section-3 .s3-cols {
+  display: flex;
+  flex-direction: column;
+  /* single column on mobile */
+  gap: 1.25rem;
+}
+
+#section-3 .s3-cols p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+#section-3 .s3-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ff3e3e;
+  width: fit-content;
+  transition: opacity 0.3s ease;
+}
+
+#section-3 .s3-link:hover {
+  opacity: 0.7;
+}
+
+/* "We Make Good Shit" watermark — hidden on smallest screens */
+#section-3 .s3-wmgs {
+  display: none;
+  position: absolute;
+  right: 1.25rem;
+  bottom: 12rem;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: right;
+  line-height: 1.1;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
 .s3-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem 0 2rem;
+  flex-direction: column;
+  /* stack on mobile */
+  gap: 1.5rem;
+  padding: 2rem 0 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 6rem;
-
-  .footer-cities {
-    display: flex;
-    gap: 4rem;
-
-    span {
-      font-size: 2rem;
-      font-weight: 700;
-      opacity: 0.9;
-    }
-  }
-
-  .footer-socials {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    font-size: 0.8rem;
-    opacity: 0.6;
-
-    a {
-      color: white;
-      text-decoration: none;
-      transition: opacity 0.2s;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
+  margin-top: 3rem;
 }
 
+.s3-footer .footer-cities {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.s3-footer .footer-cities span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.s3-footer .footer-socials {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.s3-footer .footer-socials a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.s3-footer .footer-socials a:hover {
+  opacity: 1;
+}
+
+/* ── Footer bottom ──────────────────────────────────────────── */
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0 3rem;
+  flex-direction: column;
+  /* stack on mobile */
+  gap: 1rem;
+  padding: 1.25rem 0 2rem;
   font-size: 0.75rem;
   opacity: 0.5;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-  .footer-contact {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.footer-bottom .footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-    .footer-line {
-      display: inline-block;
-      width: 3rem;
-      height: 1px;
-      background: currentColor;
-    }
+.footer-bottom .footer-contact .footer-line {
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+}
 
-    a {
-      color: white;
-      text-decoration: none;
+.footer-bottom .footer-contact a {
+  color: white;
+  text-decoration: none;
+}
 
-      &:hover {
-        opacity: 0.8;
-      }
-    }
+.footer-bottom .footer-contact a:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom .footer-right {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.footer-bottom .footer-right a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom .footer-right a:hover {
+  opacity: 0.8;
+}
+
+/* ============================================================
+   sm — ≥ 640 px  (large phones / small tablets)
+   ============================================================ */
+@media (min-width: 640px) {
+
+  #section-1 {
+    --gap: 2.5rem;
   }
 
-  .footer-right {
-    display: flex;
+  #section-1 nav {
+    padding: 1.75rem 2rem;
+  }
+
+  #section-1 nav .nav-elem:nth-child(2) {
+    display: block;
+    /* show showreel link */
+  }
+
+  #section-1 nav svg {
+    max-width: 5rem;
+  }
+
+  #section-1 h1 {
+    font-size: 5rem;
+    text-align: right;
+  }
+
+  #section-1 .middle .left {
+    justify-content: flex-end;
+    padding-block: 4rem;
+  }
+
+  #section-1 .bottom .right p {
+    text-align: left;
+  }
+
+  #section-2 .titles {
+    padding: 4rem 2rem;
+  }
+
+  #section-2 .title {
+    font-size: 1.5rem;
     gap: 2rem;
+  }
+
+  #section-3 {
+    padding: 5rem 2rem 3rem;
+  }
+
+  #section-3 .s3-heading {
+    font-size: 2.8rem;
+  }
+
+  #section-3 .s3-cols {
+    flex-direction: row;
+    /* side-by-side paragraphs */
+  }
+
+  #section-3 .s3-cols p {
+    flex: 1;
+  }
+
+  .s3-footer {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+  }
 
-    a {
-      color: white;
-      text-decoration: none;
+  .s3-footer .footer-cities span {
+    font-size: 1.6rem;
+  }
 
-      &:hover {
-        opacity: 0.8;
-      }
-    }
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   md — ≥ 768 px  (tablets)
+   ============================================================ */
+@media (min-width: 768px) {
+
+  #section-1 {
+    --gap: 3rem;
+  }
+
+  #section-1 nav {
+    padding: 2rem 3rem;
+  }
+
+  #section-1 nav svg {
+    max-width: 5.5rem;
+  }
+
+  #section-1 h1 {
+    font-size: 5.5rem;
+    letter-spacing: -1.5px;
+  }
+
+  #section-1 .middle {
+    flex-direction: row;
+    padding: 0 2rem;
+  }
+
+  #section-1 .middle .left,
+  #section-1 .middle .right {
+    width: 50%;
+  }
+
+  #section-1 .bottom {
+    flex-direction: row;
+    padding: 0 2rem 2rem;
+  }
+
+  #section-1 .bottom .left,
+  #section-1 .bottom .right {
+    width: 50%;
+  }
+
+  #section-1 .first-line {
+    width: 28rem;
+    transform: rotate(45deg) translate(0, -13rem);
+  }
+
+  #section-1 .second-line {
+    width: 8rem;
+    right: 10%;
+  }
+
+  #section-2 .titles {
+    padding: 5rem 3rem;
+    padding-left: 5rem;
+  }
+
+  #section-2 .title {
+    font-size: 1.75rem;
+    width: 70vw;
+    gap: 3rem;
+  }
+
+  #section-3 {
+    padding: 6rem 3rem 3rem;
+  }
+
+  #section-3 .s3-inner {
+    flex-direction: row;
+    /* side-by-side on tablet */
+    gap: 3rem;
+  }
+
+  #section-3 .s3-left {
+    flex: 1.2;
+    width: auto;
+  }
+
+  #section-3 .s3-right {
+    flex: 1;
+    width: auto;
+    padding-top: 3rem;
+    gap: 2rem;
+  }
+
+  #section-3 .s3-heading {
+    font-size: 3rem;
+  }
+
+  #section-3 .s3-wmgs {
+    display: block;
+    right: 3rem;
+    bottom: 13rem;
+    font-size: 1.1rem;
+  }
+
+  .s3-footer .footer-cities span {
+    font-size: 1.8rem;
+  }
+
+  .s3-footer {
+    margin-top: 5rem;
+  }
+}
+
+/* ============================================================
+   lg — ≥ 1024 px  (desktops)
+   ============================================================ */
+@media (min-width: 1024px) {
+
+  #section-1 {
+    --gap: 4rem;
+  }
+
+  #section-1 nav {
+    padding: 2.25rem 3.5rem;
+  }
+
+  #section-1 nav svg {
+    max-width: 6rem;
+  }
+
+  #section-1 h1 {
+    font-size: 6.5rem;
+    letter-spacing: -2px;
+  }
+
+  #section-1 .middle {
+    padding: 0 3rem;
+  }
+
+  #section-1 .middle .left {
+    padding-block: 6rem;
+  }
+
+  #section-1 .bottom {
+    padding: 0 3rem 2rem;
+  }
+
+  #section-1 .first-line {
+    width: 33rem;
+    transform: rotate(45deg) translate(0, -16rem);
+  }
+
+  #section-1 .second-line {
+    width: 9rem;
+    right: 11%;
+  }
+
+  #section-2 .titles {
+    padding: 6rem 4rem;
+    padding-left: 8rem;
+  }
+
+  #section-2 .title {
+    font-size: 2rem;
+    width: 60vw;
+    gap: 3.5rem;
+  }
+
+  #section-2 .title small {
+    margin-top: 12px;
+    font-size: 0.5rem;
+    width: 65px;
+  }
+
+  #section-3 {
+    padding: 7rem 4rem 4rem;
+  }
+
+  #section-3 .s3-heading {
+    font-size: 3.5rem;
+  }
+
+  #section-3 .s3-wmgs {
+    right: 4rem;
+    bottom: 13.5rem;
+    font-size: 1.15rem;
+  }
+
+  .s3-footer .footer-cities {
+    gap: 3rem;
+  }
+
+  .s3-footer .footer-cities span {
+    font-size: 2rem;
+  }
+}
+
+/* ============================================================
+   xl — ≥ 1280 px  (large desktops / original design)
+   ============================================================ */
+@media (min-width: 1280px) {
+
+  #section-1 {
+    --gap: 5rem;
+  }
+
+  #section-1 nav {
+    padding: 2.5rem 4rem;
+  }
+
+  #section-1 h1 {
+    font-size: 7rem;
+  }
+
+  #section-1 .middle .left {
+    padding-block: 7rem;
+  }
+
+  #section-1 .middle {
+    padding: 0 4rem;
+  }
+
+  #section-1 .bottom {
+    padding: 0 4rem 2rem;
+  }
+
+  #section-1 .first-line {
+    width: 35rem;
+    transform: rotate(45deg) translate(0, -17rem);
+  }
+
+  #section-1 .second-line {
+    width: 10rem;
+    right: 12%;
+  }
+
+  #section-2 .titles {
+    padding: 7rem;
+    padding-left: 10rem;
+  }
+
+  #section-2 .title {
+    font-size: 2rem;
+    width: 55vw;
+    gap: 4rem;
+  }
+
+  #section-3 {
+    padding: 8rem 4rem 4rem;
+  }
+
+  #section-3 .s3-heading {
+    font-size: 4rem;
+  }
+
+  #section-3 .s3-wmgs {
+    right: 4rem;
+    bottom: 14rem;
+    font-size: 1.2rem;
+  }
+
+  .s3-footer .footer-cities {
+    gap: 4rem;
+  }
+
+  .s3-footer .footer-cities span {
+    font-size: 2rem;
+  }
+
+  .s3-footer {
+    margin-top: 6rem;
+  }
+
+  .footer-bottom .footer-right {
+    gap: 2rem;
+  }
+
+  .footer-bottom .footer-contact .footer-line {
+    width: 3rem;
   }
 }
