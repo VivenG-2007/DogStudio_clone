@@ -21,6 +21,7 @@ body,
 
 main {
   position: relative;
+  background-color: #0b0b0b;
 }
 
 section {
@@ -30,13 +31,7 @@ section {
 }
 
 #canvas-elem {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  #canvas-elem {
-    display: block;
-  }
+  display: block;
 }
 
 #canvas-elem::after {
@@ -74,6 +69,12 @@ section {
   font-size: 0.7rem;
   cursor: pointer;
   transition: opacity 0.3s ease;
+}
+
+#section-1 nav .nav-elem:last-child {
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.2rem;
 }
 
 #section-1 nav .nav-elem:hover {
@@ -115,9 +116,9 @@ section {
 }
 
 #section-1 h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
-  line-height: 0.9;
+  line-height: 0.88;
   text-align: center;
   letter-spacing: -1px;
   text-transform: uppercase;
@@ -127,7 +128,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  padding: 0 1.25rem 2rem;
+  padding: 0 1.25rem 3rem;
 }
 
 #section-1 .bottom .left,
@@ -136,10 +137,11 @@ section {
 }
 
 #section-1 .bottom .right p {
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.6;
   font-size: 0.9rem;
   text-align: center;
+  opacity: 0.8;
 }
 
 #section-1 .first-line {
@@ -168,18 +170,20 @@ section {
 
 #section-2 .title {
   display: flex;
-  gap: 1rem;
-  font-size: 1.1rem;
-  margin: 0.6rem 0;
+  gap: 1.5rem;
+  font-size: 1.3rem;
+  margin: 1rem 0;
   width: 100%;
-  opacity: 0.35;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
 }
 
 #section-2 .title small {
-  margin-top: 8px;
-  font-size: 0.45rem;
-  width: 55px;
+  margin-top: 10px;
+  font-size: 0.6rem;
+  width: 58px;
   flex-shrink: 0;
+  letter-spacing: 1px;
 }
 
 #section-2 .title h1 {
@@ -272,10 +276,10 @@ main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
 }
 
 #section-3 .s3-heading {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 #section-3 .s3-right {
@@ -340,7 +344,7 @@ main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
 
 .s3-footer .footer-cities {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -382,6 +386,7 @@ main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .footer-bottom .footer-contact .footer-line {
@@ -404,6 +409,7 @@ main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
   display: flex;
   gap: 1.25rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-bottom .footer-right a {
@@ -434,13 +440,13 @@ main:has(#section-2 .title[img-id='royal-opera']:hover) .images #royal-opera {
   }
 
   #section-1 h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     text-align: right;
   }
 
   #section-1 .middle .left {
     justify-content: flex-end;
-    padding-block: 4rem;
+    padding-block: 5rem;
   }
 
   #section-1 .bottom .right p {

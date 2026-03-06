@@ -24,6 +24,33 @@ export default function Dog() {
     }
   }, [actions])
 
+  // Responsive camera + dog positioning — safe to run outside render phase
+  useEffect(() => {
+    function applyResponsive() {
+      const w = window.innerWidth
+      if (w < 768) {
+        // Mobile: original values
+        camera.position.x = -0.5
+        model.scene.position.set(0.7, -2.8, 0)
+        model.scene.scale.setScalar(5)
+      } else if (w < 1280) {
+        // Tablet / laptop: raise dog, shift camera right
+        camera.position.x = -0.3
+        model.scene.position.set(0.5, -2.5, 0)
+        model.scene.scale.setScalar(4.8)
+      } else {
+        // Wide desktop
+        camera.position.x = -0.2
+        model.scene.position.set(0.3, -2.3, 0)
+        model.scene.scale.setScalar(4.5)
+      }
+    }
+
+    applyResponsive()
+    window.addEventListener('resize', applyResponsive)
+    return () => window.removeEventListener('resize', applyResponsive)
+  }, [camera, model.scene])
+
   const [normalMap, branchNormalMap, branchMap] = useTexture([
     '/models/dog_normals.jpg',
     '/branches_normals.jpg',
