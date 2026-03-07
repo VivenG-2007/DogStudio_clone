@@ -1,74 +1,126 @@
-🐶 Dogstudio Clone
+🐶 Dogstudio Frontend Clone
 
-A high-performance creative website clone inspired by Dogstudio, built using React, GSAP, and Three.js.
-This project focuses on smooth scroll animations, immersive 3D elements, and modern UI interactions.
+A visually rich frontend clone of the Dogstudio website built using modern web technologies.
+This project focuses on 3D interactions, smooth scroll animations, and immersive UI experiences.
 
-🚀 Tech Stack
+The goal of this project was to explore 3D rendering and animation workflows in React using Three.js and GSAP while replicating the interactive design style of Dogstudio.
 
-⚛️ React – Component-based UI development
+🌐 Live Demo
 
-🎬 GSAP (GreenSock Animation Platform) – Advanced animations & ScrollTrigger
-
-🌍 Three.js – 3D graphics and WebGL rendering
-
+🔗 Demo: https://dog-studio-clone-eight.vercel.app/
+🔗 Original Inspiration: https://dogstudio.co
 
 ✨ Features
 
-Smooth scroll-based animations
+🎨 Modern UI inspired by Dogstudio
 
-ScrollTrigger-powered section reveals
+🧊 3D Models rendered with React Three Fiber
 
-Interactive 3D elements using Three.js
+🎞 Smooth Scroll Animations with GSAP
 
-Responsive layout
+⚡ High-performance WebGL rendering
 
-Modern creative agency UI design
+📱 Responsive layout
 
-Optimized performance and clean component structure
+🖱 Scroll-driven scene transitions
 
-📸 Preview
+🧩 Component-based React architecture
 
-Add screenshots or a demo GIF here
-
-/public/preview.png
+🛠 Tech Stack
+Technology	Purpose
+React	Frontend Framework
+Three.js	3D Rendering
+@react-three/fiber	React Renderer for Three.js
+@react-three/drei	Useful helpers for R3F
+GSAP	Animations
+ScrollTrigger	Scroll-based animations
+CSS	Styling
 📂 Project Structure
-dogstudio-clone/
+dogstudio-clone
 │
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
+├── public
+│   └── models
+│
+├── src
+│   ├── components
+│   │   ├── Dog.jsx
+│   │   ├── Scene.jsx
+│   │
 │   ├── App.jsx
-│   └── main.jsx
+│   ├── main.jsx
+│   └── App.css
 │
-├── package.json
-└── README.md
-🛠️ Installation & Setup
+└── package.json
+🚀 Installation
 
-1️⃣ Clone the repository
+Clone the repository:
 
 git clone https://github.com/your-username/dogstudio-clone.git
 
-2️⃣ Navigate to the project folder
+Navigate into the project folder:
 
 cd dogstudio-clone
 
-3️⃣ Install dependencies
+Install dependencies:
 
 npm install
 
-4️⃣ Start the development server
+Run the development server:
 
 npm run dev
+🎬 Animation Workflow
+
+The project uses GSAP Timeline + ScrollTrigger to control 3D object movements.
+
+Example:
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-1",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: 1
+  }
+})
+.to(model.position, {
+  z: -3,
+  x: 0.2
+})
+
+This allows the 3D model to animate based on scroll position.
+
+📸 Preview
+
+Add screenshots or GIFs here for better presentation.
+
+Example:
+
+/preview/landing.png
+/preview/animation.gif
 🎯 Learning Goals
 
-This project was built to:
+This project helped me learn:
 
-Master GSAP timelines and ScrollTrigger
+Integrating Three.js with React
 
-Understand React + Three.js integration
+Creating scroll-driven animations
 
-Practice immersive UI/UX animation techniques
+Managing 3D scenes in web apps
 
-Improve performance optimization in animation-heavy websites"# DogStudio_clone" 
+Structuring interactive frontend projects
+
+📌 Future Improvements
+
+🔹 Add more scene transitions
+
+🔹 Improve mobile responsiveness
+
+🔹 Optimize 3D performance
+
+🔹 Add more interactive animations
+
+🙌 Acknowledgements
+
+Inspired by the amazing design of Dogstudio.
+
+This project is for educational purposes only.
